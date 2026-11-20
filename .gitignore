@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# Models (large binary files — download separately)
+models/*.onnx
+models/*.tflite
+
+# Keep the JSON configs
+!models/*.json
+
+# SQLite database
+data/*.db
+
+# Test scripts
+test_beep.py
+test_tts.py
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log

@@ -1,0 +1,10 @@
+openwakeword
+faster-whisper
+ollama
+piper-tts
+sounddevice
+numpy
+pystray
+Pillow
+pyyaml
+google-genai

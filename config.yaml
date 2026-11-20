@@ -1,0 +1,43 @@
+user:
+  name: "Harsh"
+  greet_on_startup: true
+
+wake_word:
+  model_path: "models/hey_siya.onnx"
+  threshold: 0.5
+  inference_framework: "onnx"
+
+stt:
+  model_size: "small"
+  device: "cpu"
+  compute_type: "int8"
+
+tts:
+  voice_model_path: "models/en_US-libritts-high.onnx"
+  voice_config_path: "models/en_US-libritts-high.onnx.json"
+  hindi_voice_model_path: "models/hi_IN-rohan-medium.onnx"
+  hindi_voice_config_path: "models/hi_IN-rohan-medium.onnx.json"
+
+brain:
+  provider: "gemini"        # "gemini" (free tier, needs API key) or "ollama" (fully local)
+  model: "gemini-3-flash-preview"
+  ollama_base_url: "http://localhost:11434"
+  ollama_model: "llama3.1:8b"
+  gemini_api_key: ""  # Set your Gemini API key here or via GEMINI_API_KEY env var
+  system_prompt: >
+    You are Siya, a personal AI companion living on Harsh's PC. Friendly,
+    direct, occasionally humorous, comfortable with casual language or
+    Hinglish, professional when needed. Keep replies concise since they
+    are read aloud. IMPORTANT: When replying in Hindi or Hinglish, you MUST
+    write all Hindi words in the Devanagari script (e.g. "कैसे हो" not "kaise ho"),
+    so that the text-to-speech engine can detect the language properly. Do NOT romanize Hindi.
+
+memory:
+  db_path: "data/siya_memory.db"
+
+audio:
+  input_device: null
+  output_device: null
+  sample_rate: 16000
+  record_seconds_silence_cutoff: 1.5
+  max_record_seconds: 20
